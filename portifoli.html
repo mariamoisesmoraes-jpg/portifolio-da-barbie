@@ -1,143 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Portfólio Barbie - Maria</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(-45deg, #ff69b4, #ffb6c1, #ffc0cb, #ffe4e1);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-      color: #fff;
-    }
-    @keyframes gradientMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    /* Tela inicial com Barbie */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #ff69b4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      animation: fadeOut 3s ease forwards;
-      animation-delay: 3s;
-    }
-    #intro img {
-      width: 300px;
-      animation: zoomIn 2s ease;
-    }
-    @keyframes zoomIn {
-      from {transform: scale(0);}
-      to {transform: scale(1);}
-    }
-    @keyframes fadeOut {
-      to {opacity: 0; visibility: hidden;}
-    }
-
-    /* Títulos das linguagens */
-    h2 {
-      font-size: 50px;
-      text-align: center;
-      margin: 60px 0 30px;
-      color: #fff;
-      text-shadow: 2px 2px #ff1493;
-      border-bottom: 3px solid #ff1493;
-      padding-bottom: 10px;
-    }
-
-    /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 0 20px 60px;
-    }
-    .card {
-      background: rgba(255,255,255,0.2);
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #ff1493;
-    }
-    .card a {
-      display: block;
-      margin: 10px 0;
-      padding: 8px;
-      background: #fff;
-      color: #ff1493;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .card a:hover {
-      background: #ffe4e1;
-    }
-    .card p {
-      font-size: 14px;
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Portfólio Barbie - Maria</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(-45deg, #ff69b4, #ffb6c1, #ffc0cb, #ffe4e1);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            color: #fff;
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* Tela inicial com Barbie */
+        
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff69b4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeOut 3s ease forwards;
+            animation-delay: 3s;
+        }
+        
+        #intro img {
+            width: 300px;
+            animation: zoomIn 2s ease;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        /* Títulos das linguagens */
+        
+        h2 {
+            font-size: 50px;
+            text-align: center;
+            margin: 60px 0 30px;
+            color: #fff;
+            text-shadow: 2px 2px #ff1493;
+            border-bottom: 3px solid #ff1493;
+            padding-bottom: 10px;
+        }
+        /* Cards */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px 60px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff1493;
+        }
+        
+        .card a {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            background: #fff;
+            color: #ff1493;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .card a:hover {
+            background: #ffe4e1;
+        }
+        
+        .card p {
+            font-size: 14px;
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Tela inicial -->
-  <div id="intro">
-    <img src="raquelpng.webp" alt="Raquel Barbie Tech">
-  </div>
+    <!-- Tela inicial -->
+    <div id="intro">
+        <img src="raquelpng.webp" alt="Raquel Barbie Tech">
+    </div>
 
-  <!-- projetos do gamma-->
-  <h2>projetos do gamma</h2>
-  <div class="cards">
-    <div class="card"><a href="https://gamma.app/docs/Startups-Mais-Promissoras-de-2026-2n6lqw5khw2xmou" target="_blank">Projeto 1</a><p>´projeto do gamma</p></div>
-    <div class="card"><a href="https://gamma.app/docs/Agenda-Escolar-360-zf1vodwfalln7e5" target="_blank">Projeto 1</a><p>agenda escolar</p></div>
-    <div class="card"><a href="https://gamma.app/docs/A-Importancia-da-Agenda-Escolar-em-Projetos-Educacionais-ca6srhswyohqmon" target="_blank">Projeto 2</a><p>alguma coisa que esqueci </p></div>
-    <div class="card"><a href="https://netlify.app/seuusuario/projeto3" target="_blank">Projeto 3</a><p>Site institucional</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/projeto4" target="_blank">Projeto 4</a><p>Blog estilizado</p></div>
-    <div class="card"><a href="https://vercel.com/seuusuario/projeto5" target="_blank">Projeto 5</a><p>Loja virtual</p></div>
-    <div class="card"><a href="https://netlify.app/seuusuario/projeto6" target="_blank">Projeto 6</a><p>Dashboard simples</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/projeto7" target="_blank">Projeto 7</a><p>Clone de site famoso</p></div>
-    <div class="card"><a href="https://vercel.com/seuusuario/projeto8" target="_blank">Projeto 8</a><p>Currículo online</p></div>
-    <div class="card"><a href="https://netlify.app/seuusuario/projeto9" target="_blank">Projeto 9</a><p>Galeria de imagens</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/projeto10" target="_blank">Projeto 10</a><p>Site de eventos</p></div>
-  </div>
+    <!-- projetos-->
+    <h2>projetos</h2>
+    <div class="cards">
+        <div class="card"><a href="https://gamma.app/docs/Startups-Mais-Promissoras-de-2026-2n6lqw5khw2xmou" target="_blank">Projeto 1</a>
+            <p>´projeto do gamma</p>
+        </div>
+        <div class="card"><a href="https://gamma.app/docs/Agenda-Escolar-360-zf1vodwfalln7e5" target="_blank">Projeto 1</a>
+            <p>agenda escolar</p>
+        </div>
+        <div class="card"><a href="https://gamma.app/docs/A-Importancia-da-Agenda-Escolar-em-Projetos-Educacionais-ca6srhswyohqmon" target="_blank">Projeto 2</a>
+            <p>alguma coisa que esqueci </p>
+        </div>
+        <div class="card"><a href="https://netlify.app/seuusuario/projeto3" target="_blank">Projeto 3</a>
+            <p>Site institucional</p>
+        </div>
+        <div class="card"><a href="https://github.com/seuusuario/projeto4" target="_blank">Projeto 4</a>
+            <p>Blog estilizado</p>
+        </div>
+        <div class="card"><a href="https://vercel.com/seuusuario/projeto5" target="_blank">Projeto 5</a>
+            <p>Loja virtual</p>
+        </div>
+        <div class="card"><a href="https://netlify.app/seuusuario/projeto6" target="_blank">Projeto 6</a>
+            <p>Dashboard simples</p>
+        </div>
+        <div class="card"><a href="https://github.com/seuusuario/projeto7" target="_blank">Projeto 7</a>
+            <p>Clone de site famoso</p>
+        </div>
+        <div class="card"><a href="https://vercel.com/seuusuario/projeto8" target="_blank">Projeto 8</a>
+            <p>Currículo online</p>
+        </div>
+        <div class="card"><a href="https://netlify.app/seuusuario/projeto9" target="_blank">Projeto 9</a>
+            <p>Galeria de imagens</p>
+        </div>
+        <div class="card"><a href="https://github.com/seuusuario/projeto10" target="_blank">Projeto 10</a>
+            <p>Site de eventos</p>
+        </div>
+    </div>
 
-  <!-- Seção JavaScript -->
-  <h2>JavaScript</h2>
-  <div class="cards">
-    <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 1</a><p>teste js</p></div>
-    <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/variavel.js.git" target="_blank">Projeto JS 2</a><p>variavel</p></div>
-    <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 3</a><p>frutas</p></div>
-    <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-for.git" target="_blank">Projeto JS 4</a><p>usando for pela primeira vez eu acho</p></div>
-    <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-break.git" target="_blank">Projeto JS 5</a><p>usando break</p></div>
-    <div class="card"><a href="https://netlify.app/seuusuario/js6" target="_blank">Projeto JS 6</a><p>Conversor de moedas</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/js7" target="_blank">Projeto JS 7</a><p>Editor de texto</p></div>
-    <div class="card"><a href="https://vercel.com/seuusuario/js8" target="_blank">Projeto JS 8</a><p>Chat simples</p></div>
-    <div class="card"><a href="https://netlify.app/seuusuario/js9" target="_blank">Projeto JS 9</a><p>Galeria dinâmica</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/js10" target="_blank">Projeto JS 10</a><p>Mini game</p></div>
-  </div>
-
-  <!-- Seção Python -->
-  <h2>Python</h2>
-  <div class="cards">
-    <div class="card"><a href="https://github.com/seuusuario/py1" target="_blank">Projeto Python 1</a><p>API de dados</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py2" target="_blank">Projeto Python 2</a><p>Web scraper</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py3" target="_blank">Projeto Python 3</a><p>Automação de tarefas</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py4" target="_blank">Projeto Python 4</a><p>Chatbot simples</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py5" target="_blank">Projeto Python 5</a><p>Gerador de senhas</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py6" target="_blank">Projeto Python 6</a><p>Analisador de texto</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py7" target="_blank">Projeto Python 7</a><p>Calculadora científica</p></div>
-    <div class="card"><a href="https://github.com/seuusuario/py8" target="_blank">Projeto Python 8</a><p>Jogo simples</p></div>
-    <div class="card
-
+    <!-- Seção JavaScript -->
+    <h2>JavaScript</h2>
+    <div class="cards">
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 1</a>
+            <p>teste js</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/variavel.js.git" target="_blank">Projeto JS 2</a>
+            <p>variavel</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 3</a>
+            <p>frutas</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-for.git" target="_blank">Projeto JS 4</a>
+            <p>usando for pela primeira vez eu acho</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-break.git" target="_blank">Projeto JS 5</a>
+            <p>usando break</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/carro.js" target="_blank">Projeto 7</a>
+            <p>carros</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/media_se.js" target="_blank">Projeto 8</a>
+            <p>media</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/notas.js" target="_blank">Projeto 9</a>
+            <p>notas</p>
+        </div>
+        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/teste.html" target="_blank">Projeto 10</a>
+            <p>teste de alguma coisa</p>
+        </div>
+    </div>
+    <!-- Seção Python -->
+    <h2>Python</h2>
+    <div class="cards ">
+        <div class="card "><a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html " target="_blank ">meu coisa em py</a>
+            <p>alguma coisa em py</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py2 " target="_blank ">Projeto Python 2</a>
+            <p>Web scraper</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py3 " target="_blank ">Projeto Python 3</a>
+            <p>Automação de tarefas</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py4 " target="_blank ">Projeto Python 4</a>
+            <p>Chatbot simples</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py5 " target="_blank ">Projeto Python 5</a>
+            <p>Gerador de senhas</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py6 " target="_blank ">Projeto Python 6</a>
+            <p>Analisador de texto</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py7 " target="_blank ">Projeto Python 7</a>
+            <p>Calculadora científica</p>
+        </div>
+        <div class="card "><a href="https://github.com/seuusuario/py8 " target="_blank ">Projeto Python 8</a>
+            <p>Jogo simples</p>
+        </div>
+        <div class="card
