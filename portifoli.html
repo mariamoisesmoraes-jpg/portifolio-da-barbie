@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <title>Portfólio Barbie - Maria</title>
     <style>
+        /* Fundo animado */
+        
         body {
             margin: 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(-45deg, #ff69b4, #ffb6c1, #ffc0cb, #ffe4e1);
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(-45deg, #ff69b4, #dda0dd, #fffacd, #ffffff);
             background-size: 400% 400%;
-            animation: gradientMove 10s ease infinite;
+            animation: gradientMove 12s ease infinite;
             color: #fff;
+            cursor: url('https://cur.cursors-4u.net/heart/hea-1/hea92.cur'), auto;
+            /* Cursor coração */
         }
         
         @keyframes gradientMove {
@@ -25,7 +29,7 @@
                 background-position: 0% 50%;
             }
         }
-        /* Tela inicial com Barbie */
+        /* Tela inicial */
         
         #intro {
             position: fixed;
@@ -62,60 +66,507 @@
                 visibility: hidden;
             }
         }
-        /* Títulos das linguagens */
+        /* Títulos neon cursivos */
         
         h2 {
-            font-size: 50px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 55px;
             text-align: center;
             margin: 60px 0 30px;
             color: #fff;
-            text-shadow: 2px 2px #ff1493;
-            border-bottom: 3px solid #ff1493;
-            padding-bottom: 10px;
+            text-shadow: 0 0 10px #ff69b4, 0 0 20px #dda0dd, 0 0 30px gold;
+            animation: glow 2s ease-in-out infinite alternate;
         }
-        /* Cards */
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff69b4;
+            }
+            to {
+                text-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
+            }
+        }
+        /* Letras curvadas */
+        
+        .curved span {
+            display: inline-block;
+            transform: rotate(-15deg);
+            margin: 0 2px;
+            font-size: 55px;
+            color: #fff;
+            text-shadow: 0 0 10px #ff69b4, 0 0 20px gold;
+        }
+        
+        .curved span:nth-child(even) {
+            transform: rotate(15deg);
+        }
+        /* Cards com glassmorphism */
         
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            padding: 0 20px 60px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.4s, box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .card:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+        
+        .card:nth-child(even) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
+        }
+        /* Botões neon */
+        
+        .card a {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            background: #fff;
+            color: #ff1493;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 0 15px #ff69b4;
+            transition: all 0.3s ease;
+        }
+        
+        .card a:hover {
+            background: #ff69b4;
+            color: #fff;
+            box-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #fff;
+        }
+        /* Estilo especial para Jogos */
+        
+        .cards.jogos .card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px dashed #ff69b4;
+            border-radius: 25px;
+        }
+        
+        .cards.jogos .card:hover {
+            transform: rotate(-2deg) scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px #ff1493, 0 0 50px #dda0dd, 0 0 70px gold;
+        }
+        
+        .cards.jogos .card img {
+            border-radius: 15px;
+            border: 3px solid #fff;
+            margin-top: 10px;
+            transition: transform 0.4s;
+            box-shadow: 0 0 15px #ff69b4;
+        }
+        
+        .cards.jogos .card img:hover {
+            transform: scale(1.1);
+        }
+        /* Corações separados e espelhados */
+        
+        .hearts span {
+            position: fixed;
+            top: -50px;
+            font-size: 35px;
+            opacity: 0.4;
+            animation: float 12s linear infinite;
+        }
+        
+        .hearts span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .hearts span:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+            transform: scaleX(-1);
+        }
+        
+        .hearts span:nth-child(3) {
+            left: 60%;
+            animation-delay: 4s;
+        }
+        
+        .hearts span:nth-child(4) {
+            left: 80%;
+            animation-delay: 6s;
+            transform: scaleX(-1);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(120vh);
+            }
+        }
+        /* Estrelas espalhadas */
+        
+        .stars span {
+            position: fixed;
+            font-size: 20px;
+            color: gold;
+            opacity: 0.6;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        .stars span:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .stars span:nth-child(2) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+        
+        .stars span:nth-child(3) {
+            top: 60%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+        
+        .stars span:nth-child(4) {
+            top: 80%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes twinkle {
+            from {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        /* Fundo pastel */
+        
+        body {
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            background: linear-gradient(-45deg, #f8bbd0, #e1bee7, #fff8e1, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            color: #4a148c;
+            /* lilás escuro para contraste */
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* Títulos cursivos maiores */
+        
+        h2 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 65px;
+            text-align: center;
+            margin: 60px 0 30px;
+            color: #6a1b9a;
+            /* lilás */
+            border-bottom: 2px solid #f48fb1;
+            /* rosa */
+            padding-bottom: 10px;
+        }
+        /* Texto dos cards mais legível */
+        
+        .card p {
+            font-size: 18px;
+            color: #4a148c;
+            /* lilás escuro */
+        }
+        /* Botões elegantes sem neon */
+        
+        .card a {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            background: #fce4ec;
+            /* rosa claro */
+            color: #6a1b9a;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .card a:hover {
+            background: #f48fb1;
+            /* rosa mais forte */
+            color: #fff;
+        }
+        /* Importar fonte Montserrat */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        /* Fundo pastel */
+        
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(-45deg, #f8bbd0, #e1bee7, #fff8e1, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            color: #4a148c;
+            /* lilás escuro para contraste */
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* Tela inicial */
+        
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f48fb1;
+            /* rosa suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeOut 3s ease forwards;
+            animation-delay: 3s;
+        }
+        
+        #intro img {
+            width: 320px;
+            animation: zoomIn 2s ease;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        /* Títulos grandes e claros */
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 70px;
+            text-align: center;
+            margin: 60px 0 30px;
+            color: #6a1b9a;
+            /* lilás */
+            border-bottom: 3px solid #f48fb1;
+            /* linha rosa */
+            padding-bottom: 10px;
+        }
+        /* Cards com efeito vidro suave */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             padding: 0 20px 60px;
         }
         
         .card {
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 25px;
             text-align: center;
             transition: transform 0.4s, box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .card:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+        
+        .card:nth-child(even) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px #ff1493;
+            box-shadow: 0 0 20px rgba(106, 27, 154, 0.3);
         }
+        /* Texto dos cards */
+        
+        .card p {
+            font-size: 18px;
+            color: #4a148c;
+        }
+        /* Botões suaves */
         
         .card a {
             display: block;
-            margin: 10px 0;
-            padding: 8px;
-            background: #fff;
-            color: #ff1493;
+            margin: 12px 0;
+            padding: 14px;
+            background: #fce4ec;
+            color: #6a1b9a;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
         
         .card a:hover {
-            background: #ffe4e1;
+            background: #f48fb1;
+            color: #fff;
+        }
+        /* Corações descendo */
+        
+        .hearts span {
+            position: fixed;
+            top: -50px;
+            font-size: 35px;
+            opacity: 0.4;
+            animation: float 12s linear infinite;
         }
         
-        .card p {
-            font-size: 14px;
-            color: #fff;
+        .hearts span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .hearts span:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+            transform: scaleX(-1);
+        }
+        
+        .hearts span:nth-child(3) {
+            left: 60%;
+            animation-delay: 4s;
+        }
+        
+        .hearts span:nth-child(4) {
+            left: 80%;
+            animation-delay: 6s;
+            transform: scaleX(-1);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(120vh);
+            }
+        }
+        /* Estrelas cintilando */
+        
+        .stars span {
+            position: fixed;
+            font-size: 22px;
+            color: gold;
+            opacity: 0.6;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        .stars span:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .stars span:nth-child(2) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+        
+        .stars span:nth-child(3) {
+            top: 60%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+        
+        .stars span:nth-child(4) {
+            top: 80%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes twinkle {
+            from {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
         }
     </style>
 </head>
+
 
 <body>
     <!-- Tela inicial -->
@@ -193,33 +644,56 @@
         </div>
     </div>
     <!-- Seção jogos -->
-    <h2>jogos</h2>
-    <div class="cards ">
-        <div class="card "><a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html " target="_blank ">meu coisa em py</a>
-            <p>alguma coisa em py</p>
-        </div>
+    <h2>Jogos</h2>
+    <div class="cards">
+
+        <!-- Projeto 1 -->
         <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/uplifting-green-french-fries?platform=android" target="_blank">meu coisa em py</a>
-            <p>alguma coisa em py</p>
+            <a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html" target="_blank">Meu coisa em Py</a>
+            <p>Alguma coisa em Py</p>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="card">
+            <a href="https://snack.expo.dev/@mariaclracacau/uplifting-green-french-fries?platform=android" target="_blank">jogo qualquer em py</a>
+            <p>snack expo</p>
             <img src="jogo qualquer.png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
         </div>
-        <div class="card "><a href="https://snack.expo.dev/@mariaclracacau/bf9109 " target="_blank ">Projeto 3</a>
-            <p>muda de imagem</p>
+
+        <!-- Projeto 3 -->
+        <div class="card">
+            <a href="https://snack.expo.dev/@mariaclracacau/bf9109" target="_blank">Projeto 3</a>
+            <p>Muda de imagem</p>
             <img src="imagem de cachorro 🐶 .png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
         </div>
-        <div class="card "><a href="https://github.com/seuusuario/py4 " target="_blank ">Projeto Python 4</a>
+
+        <!-- Projeto 4 -->
+        <div class="card">
+            <a href="https://github.com/seuusuario/py4" target="_blank">Projeto Python 4</a>
             <p>Chatbot simples</p>
         </div>
-        <div class="card "><a href="https://github.com/seuusuario/py5 " target="_blank ">Projeto Python 5</a>
-            <p>Gerador de senhas</p>
+
+        <!-- Projeto 5 -->
+        <div class="card">
+            <a href="https://snack.expo.dev/@mariaclracacau/94bbec" target="_blank">Projeto Python 5</a>
+            <p>Cobra quadrada</p>
+            <img src="da cobra  🐍 .png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
         </div>
-        <div class="card "><a href="https://github.com/seuusuario/py6 " target="_blank ">Projeto Python 6</a>
+
+        <!-- Projeto 6 -->
+        <div class="card">
             <p>Analisador de texto</p>
         </div>
-        <div class="card "><a href="https://github.com/seuusuario/py7 " target="_blank ">Projeto Python 7</a>
+
+        <!-- Projeto 7 -->
+        <div class="card">
+            <a href="https://github.com/seuusuario/py7" target="_blank">Projeto Python 7</a>
             <p>Calculadora científica</p>
         </div>
-        <div class="card "><a href="https://github.com/seuusuario/py8 " target="_blank ">Projeto Python 8</a>
+        <!-- Projeto 8 -->
+        <div class="card">
+            <a href="https://github.com/seuusuario/py8" target="_blank">Projeto Python 8</a>
             <p>Jogo simples</p>
         </div>
-        <div class="card
+
+    </div>
