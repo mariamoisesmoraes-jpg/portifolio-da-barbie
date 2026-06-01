@@ -1,817 +1,429 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Portfólio Barbie - Maria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Moisés | Front-End Developer</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfólio de Maria Moisés, Front-End Developer e UI Designer. Criando experiências digitais modernas e intuitivas.">
+    <meta name="keywords" content="Frontend, UI, UX, HTML, CSS, JavaScript, Portfólio, Web Design">
+    <meta name="author" content="Maria Moisés">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* Fundo animado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+         :root {
+            --primary: #E754A6;
+            --primary-light: #FFF2F8;
+            --text: #1E1E1E;
+            --gray: #6B7280;
+            --border: #ECECEC;
+            --white: #FFFFFF;
+            --bg: #ffffff;
+        }
         
         body {
-            margin: 0;
-            font-family: 'Brush Script MT', cursive;
-            background: linear-gradient(-45deg, #ff69b4, #dda0dd, #fffacd, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientMove 12s ease infinite;
-            color: #fff;
-            cursor: url('https://cur.cursors-4u.net/heart/hea-1/hea92.cur'), auto;
-            /* Cursor coração */
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background .3s, color .3s;
         }
         
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
-        /* Tela inicial */
         
-        #intro {
-            position: fixed;
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            background: var(--white);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ff69b4;
+            z-index: 100;
+        }
+        
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            z-index: 2000;
-            animation: fadeOut 3s ease forwards;
-            animation-delay: 3s;
         }
         
-        #intro img {
-            width: 300px;
-            animation: zoomIn 2s ease;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
         }
         
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
+        .logo span {
+            color: var(--primary);
         }
         
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        /* Títulos neon cursivos */
-        
-        h2 {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 55px;
-            text-align: center;
-            margin: 60px 0 30px;
-            color: #fff;
-            text-shadow: 0 0 10px #ff69b4, 0 0 20px #dda0dd, 0 0 30px gold;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #ff69b4;
-            }
-            to {
-                text-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
-            }
-        }
-        /* Letras curvadas */
-        
-        .curved span {
-            display: inline-block;
-            transform: rotate(-15deg);
-            margin: 0 2px;
-            font-size: 55px;
-            color: #fff;
-            text-shadow: 0 0 10px #ff69b4, 0 0 20px gold;
-        }
-        
-        .curved span:nth-child(even) {
-            transform: rotate(15deg);
-        }
-        /* Cards com glassmorphism */
-        
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 0 20px 60px;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.4s, box-shadow 0.4s;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-        
-        .card:nth-child(odd) {
-            animation-delay: 0.3s;
-        }
-        
-        .card:nth-child(even) {
-            animation-delay: 0.6s;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .card:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
-        }
-        /* Botões neon */
-        
-        .card a {
-            display: block;
-            margin: 10px 0;
-            padding: 12px;
-            background: #fff;
-            color: #ff1493;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: bold;
-            box-shadow: 0 0 15px #ff69b4;
-            transition: all 0.3s ease;
-        }
-        
-        .card a:hover {
-            background: #ff69b4;
-            color: #fff;
-            box-shadow: 0 0 25px #ff1493, 0 0 40px #dda0dd, 0 0 60px gold;
-        }
-        
-        .card p {
-            font-size: 16px;
-            color: #fff;
-        }
-        /* Estilo especial para Jogos */
-        
-        .cards.jogos .card {
-            background: rgba(255, 255, 255, 0.2);
-            border: 3px dashed #ff69b4;
-            border-radius: 25px;
-        }
-        
-        .cards.jogos .card:hover {
-            transform: rotate(-2deg) scale(1.1);
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 30px #ff1493, 0 0 50px #dda0dd, 0 0 70px gold;
-        }
-        
-        .cards.jogos .card img {
-            border-radius: 15px;
-            border: 3px solid #fff;
-            margin-top: 10px;
-            transition: transform 0.4s;
-            box-shadow: 0 0 15px #ff69b4;
-        }
-        
-        .cards.jogos .card img:hover {
-            transform: scale(1.1);
-        }
-        /* Corações separados e espelhados */
-        
-        .hearts span {
-            position: fixed;
-            top: -50px;
-            font-size: 35px;
-            opacity: 0.4;
-            animation: float 12s linear infinite;
-        }
-        
-        .hearts span:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .hearts span:nth-child(2) {
-            left: 30%;
-            animation-delay: 2s;
-            transform: scaleX(-1);
-        }
-        
-        .hearts span:nth-child(3) {
-            left: 60%;
-            animation-delay: 4s;
-        }
-        
-        .hearts span:nth-child(4) {
-            left: 80%;
-            animation-delay: 6s;
-            transform: scaleX(-1);
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(120vh);
-            }
-        }
-        /* Estrelas espalhadas */
-        
-        .stars span {
-            position: fixed;
-            font-size: 20px;
-            color: gold;
-            opacity: 0.6;
-            animation: twinkle 3s infinite alternate;
-        }
-        
-        .stars span:nth-child(1) {
-            top: 20%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-        
-        .stars span:nth-child(2) {
-            top: 40%;
-            left: 70%;
-            animation-delay: 1s;
-        }
-        
-        .stars span:nth-child(3) {
-            top: 60%;
-            left: 30%;
-            animation-delay: 2s;
-        }
-        
-        .stars span:nth-child(4) {
-            top: 80%;
-            left: 80%;
-            animation-delay: 3s;
-        }
-        
-        @keyframes twinkle {
-            from {
-                opacity: 0.3;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-        /* Fundo pastel */
-        
-        body {
-            margin: 0;
-            font-family: 'Brush Script MT', cursive;
-            background: linear-gradient(-45deg, #f8bbd0, #e1bee7, #fff8e1, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-            color: #4a148c;
-            /* lilás escuro para contraste */
-        }
-        
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        /* Títulos cursivos maiores */
-        
-        h2 {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 65px;
-            text-align: center;
-            margin: 60px 0 30px;
-            color: #6a1b9a;
-            /* lilás */
-            border-bottom: 2px solid #f48fb1;
-            /* rosa */
-            padding-bottom: 10px;
-        }
-        /* Texto dos cards mais legível */
-        
-        .card p {
-            font-size: 18px;
-            color: #4a148c;
-            /* lilás escuro */
-        }
-        /* Botões elegantes sem neon */
-        
-        .card a {
-            display: block;
-            margin: 10px 0;
-            padding: 12px;
-            background: #fce4ec;
-            /* rosa claro */
-            color: #6a1b9a;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        
-        .card a:hover {
-            background: #f48fb1;
-            /* rosa mais forte */
-            color: #fff;
-        }
-        /* Importar fonte Montserrat */
-        
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-        /* Fundo pastel */
-        
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(-45deg, #f8bbd0, #e1bee7, #fff8e1, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-            color: #4a148c;
-            /* lilás escuro para contraste */
-        }
-        
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        /* Tela inicial */
-        
-        #intro {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #f48fb1;
-            /* rosa suave */
+        .menu {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            animation: fadeOut 3s ease forwards;
-            animation-delay: 3s;
-        }
-        
-        #intro img {
-            width: 320px;
-            animation: zoomIn 2s ease;
-        }
-        
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        /* Títulos grandes e claros */
-        
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 70px;
-            text-align: center;
-            margin: 60px 0 30px;
-            color: #6a1b9a;
-            /* lilás */
-            border-bottom: 3px solid #f48fb1;
-            /* linha rosa */
-            padding-bottom: 10px;
-        }
-        /* Cards com efeito vidro suave */
-        
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            padding: 0 20px 60px;
         }
         
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.4s, box-shadow 0.4s;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-        
-        .card:nth-child(odd) {
-            animation-delay: 0.3s;
-        }
-        
-        .card:nth-child(even) {
-            animation-delay: 0.6s;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(106, 27, 154, 0.3);
-        }
-        /* Texto dos cards */
-        
-        .card p {
-            font-size: 18px;
-            color: #4a148c;
-        }
-        /* Botões suaves */
-        
-        .card a {
-            display: block;
-            margin: 12px 0;
-            padding: 14px;
-            background: #fce4ec;
-            color: #6a1b9a;
+        .menu a {
             text-decoration: none;
-            border-radius: 12px;
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 30px;
+            font-size: .9rem;
             font-weight: 600;
-            transition: background 0.3s ease;
+            margin-bottom: 25px;
         }
         
-        .card a:hover {
-            background: #f48fb1;
-            color: #fff;
-        }
-        /* Corações descendo */
-        
-        .hearts span {
-            position: fixed;
-            top: -50px;
-            font-size: 35px;
-            opacity: 0.4;
-            animation: float 12s linear infinite;
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
         
-        .hearts span:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 35px;
         }
         
-        .hearts span:nth-child(2) {
-            left: 30%;
-            animation-delay: 2s;
-            transform: scaleX(-1);
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
-        .hearts span:nth-child(3) {
-            left: 60%;
-            animation-delay: 4s;
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
         }
         
-        .hearts span:nth-child(4) {
-            left: 80%;
-            animation-delay: 6s;
-            transform: scaleX(-1);
+        .btn-primary {
+            background: var(--primary);
+            color: white;
         }
         
-        @keyframes float {
-            0% {
-                transform: translateY(0);
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+        
+        .stats {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .stat-card p {
+            color: var(--gray);
+        }
+        
+        .services {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-text {
+            color: var(--gray);
+            margin-bottom: 50px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: .3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        .projects {
+            padding: 100px 0;
+            background: #fafafa;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #E754A6, #FFC2E2);
+        }
+        
+        .project-info {
+            padding: 25px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .project-info p {
+            color: var(--gray);
+        }
+        
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .contact li {
+            margin-bottom: 10px;
+        }
+        
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--gray);
+        }
+        /* Dark Mode */
+        
+        body.dark {
+            --bg: #1E1E1E;
+            --text: #f5f5f5;
+            --gray: #d1d5db;
+            --border: #333;
+            --white: #2c2c2c;
+        }
+        /* Responsividade */
+        
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 2.4rem;
             }
-            100% {
-                transform: translateY(120vh);
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                background: var(--white);
+                padding: 20px;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                border: 1px solid var(--border);
+                border-radius: 12px;
             }
-        }
-        /* Estrelas cintilando */
-        
-        .stars span {
-            position: fixed;
-            font-size: 22px;
-            color: gold;
-            opacity: 0.6;
-            animation: twinkle 3s infinite alternate;
-        }
-        
-        .stars span:nth-child(1) {
-            top: 20%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-        
-        .stars span:nth-child(2) {
-            top: 40%;
-            left: 70%;
-            animation-delay: 1s;
-        }
-        
-        .stars span:nth-child(3) {
-            top: 60%;
-            left: 30%;
-            animation-delay: 2s;
-        }
-        
-        .stars span:nth-child(4) {
-            top: 80%;
-            left: 80%;
-            animation-delay: 3s;
-        }
-        
-        @keyframes twinkle {
-            from {
-                opacity: 0.3;
-                transform: scale(0.8);
+            .menu.active {
+                display: flex;
             }
-            to {
-                opacity: 1;
-                transform: scale(1.2);
+            .menu-toggle {
+                display: block;
             }
         }
     </style>
 </head>
 
-
 <body>
-    <!-- Tela inicial -->
-    <div id="intro">
-        <img src="raquelpng.webp" alt="Raquel Barbie Tech">
-    </div>
 
-    <!-- GAMMA-->
-    <h2>GAMMA</h2>
-    <div class="cards">
-        <div class="card">
-            <a href="https://gamma.app/docs/Propriedade-Intelectual-e-Educacao-Beneficios-e-Limitacoes-no-Amb-xlvx2pcoce2wlx0" target="_blank">PROPRIEDADE INTERLECTUAL</a>
-            <p>propriedade intelectual</p>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Maria<span>.</span></div>
+                <div class="menu">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            </nav>
         </div>
-        <div class="card">
-            <a href="https://gamma.app/docs/Startups-Mais-Promissoras-de-2026-2n6lqw5khw2xmou" target="_blank">STARTUPS</a>
-            <p>startups</p>
-        </div>
-        <div class="card">
-            <a href="https://gamma.app/docs/A-Importancia-da-Agenda-Escolar-em-Projetos-Educacionais-ca6srhswyohqmon" target="_blank">PROJETO DA AGENDA</a>
-            <p>agenda escolar </p>
-        </div>
-        <div class="card"><a href="https://netlify.app/seuusuario/projeto3" target="_blank">Projeto 3</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://github.com/seuusuario/projeto4" target="_blank">Projeto 4</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://vercel.com/seuusuario/projeto5" target="_blank">Projeto 5</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://netlify.app/seuusuario/projeto6" target="_blank">Projeto 6</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://github.com/seuusuario/projeto7" target="_blank">Projeto 7</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://vercel.com/seuusuario/projeto8" target="_blank">Projeto 8</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://netlify.app/seuusuario/projeto9" target="_blank">Projeto 9</a>
-            <p>falso</p>
-        </div>
-        <div class="card"><a href="https://github.com/seuusuario/projeto10" target="_blank">Projeto 10</a>
-            <p>falso</p>
-        </div>
-    </div>
+    </header>
 
-    <!-- Seção JavaScript -->
-    <h2>JavaScript</h2>
-    <div class="cards">
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 1</a>
-            <p>teste js</p>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="tag">Frontend Developer & UI Designer</div>
+                <h1>Criando experiências digitais modernas e intuitivas.</h1>
+                <p>Sou Maria Moisés, desenvolvedora apaixonada por design e tecnologia. Transformo ideias em interfaces elegantes, responsivas e funcionais.</p>
+                <div class="buttons">
+                    <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html" class="btn-primary">Ver Portfólio</a>
+                    <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" class="btn-secondary">LinkedIn</a>
+                    <button onclick="toggleDarkMode()" class="btn-secondary">🌙 Dark Mode</button>
+                </div>
+            </div>
         </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/variavel.js.git" target="_blank">Projeto JS 2</a>
-            <p>variavel</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end.git" target="_blank">Projeto JS 3</a>
-            <p>frutas</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-for.git" target="_blank">Projeto JS 4</a>
-            <p>usando for pela primeira vez eu acho</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/usando-break.git" target="_blank">Projeto JS 5</a>
-            <p>usando break</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/carro.js" target="_blank">Projeto JS 7</a>
-            <p>carros</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/media_se.js" target="_blank">Projeto JS 8</a>
-            <p>media</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/notas.js" target="_blank">Projeto JS 9</a>
-            <p>notas</p>
-        </div>
-        <div class="card"><a href="https://github.com/mariamoisesmoraes-jpg/primera-aula-back-end/blob/main/teste.html" target="_blank">Projeto JS 10</a>
-            <p>teste de alguma coisa</p>
-        </div>
-    </div>
-    <!-- HTML+css-->
-    <h2>HTML+css</h2>
-    <div class="cards">
+    </section>
 
-        <!-- Projeto 1 -->
-        <div class="card">
-            <a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html" target="_blank">NADA</a>
-            <p>NADA</p>
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10+</h3>
+                    <p>Projetos Desenvolvidos</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Front-End</h3>
+                    <p>HTML, CSS e JavaScript</p>
+                </div>
+                <div class="stat-card">
+                    <h3>UI/UX</h3>
+                    <p>Interfaces modernas e responsivas</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Projeto 2 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/uplifting-green-french-fries?platform=android" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
+    <section class="services" id="sobre">
+        <div class="container">
+            <h2 class="section-title">O que eu faço</h2>
+            <p class="section-text">Soluções digitais focadas em design, usabilidade e performance.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Sites modernos e responsivos.</p>
+                </div>
+                <div class="service-card">
+                    <h3>UI/UX Design</h3>
+                    <p>Experiências intuitivas e visualmente agradáveis.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Projetos Acadêmicos</h3>
+                    <p>Aplicações voltadas para estudo e inovação.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Projeto 3 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/bf9109" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
+    <section class="projects" id="projetos">
+        <div class="container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h<section class="contact" id="contato">
+                            <div class="container">
+                                <h2 class="section-title">Contato</h2>
+                                <p class="section-text">Entre em contato comigo pelos canais abaixo:</p>
+                                <ul>
+                                    <li>Email: <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a></li>
+                                    <li>WhatsApp: <a href="https://wa.me/5541999999999" target="_blank">(41) 99999-9999</a></li>
+                                    <li>LinkedIn: <a href="https://www.linkedin.com/in/seu-usuario" target="_blank">linkedin.com/in/seu-usuario</a></li>
+                                </ul>
+                            </div>
+    </section>
 
-        <!-- Projeto 4 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/c80db0?platform=ios" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
+    <footer>
+        <div class="container">
+            © 2026 Maria Moisés • Front-End Developer
         </div>
+    </footer>
 
-        <!-- Projeto 5 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/94bbec" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="#" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
+    <!-- Funções JS -->
+    <script>
+        // Alterna o dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+        }
 
-        <!-- Projeto 6 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/94bbec" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="#" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
+        // Alterna o menu mobile
+        function toggleMenu() {
+            document.querySelector(".menu").classList.toggle("active");
+        }
+    </script>
+</body>
 
-        <!-- Projeto 7 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py7" target="_blank">NADA</a>
-            <p>FALSO</p>
-        </div>
-        <!-- Projeto 8 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py8" target="_blank">NADA</a>
-            <p>FALSO</p>
-        </div>
-
-    </div>
-    <!--SNACK EXPO-->
-    <h2>snack expo</h2>
-    <div class="cards">
-
-        <!-- Projeto 1 -->
-        <div class="card">
-            <a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html" target="_blank">NADA</a>
-            <p>NADA</p>
-        </div>
-
-        <!-- Projeto 2 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/uplifting-green-french-fries?platform=android" target="_blank">CONTADOR</a>
-            <p>snack expo</p>
-            <img src="jogo qualquer.png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 3 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/bf9109" target="_blank">MUDA DE IMAGEM</a>
-            <p>muda de imagem</p>
-            <img src="imagem de cachorro 🐶 .png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 4 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/c80db0?platform=ios" target="_blank">MUDA DE COR</a>
-            <p>muda de cor</p>
-            <img src="muda de cor.png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 5 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/94bbec" target="_blank"> COBRA QUADRADA</a>
-            <p>cobra quadrada</p>
-            <img src="da cobra  🐍 .png" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 6 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py7" target="_blank">Projeto 7</a>
-            <p>nada</p>
-        </div>
-
-        <!-- Projeto 7 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py7" target="_blank">Projeto 7</a>
-            <p>nada</p>
-        </div>
-        <!-- Projeto 8 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py8" target="_blank">Projeto  8</a>
-            <p>nada</p>
-        </div>
-
-    </div>
-    </div>
-    <!--PY-->
-    <h2>PY</h2>
-    <div class="cards">
-
-        <!-- Projeto 1 -->
-        <div class="card">
-            <a href="https://mariamoisesmoraes-jpg.github.io/usando-py-para-criar-jogo/index.html" target="_blank">PAC-MAN </a>
-            <p>pac-man em py</p>
-        </div>
-
-        <!-- Projeto 2 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/uplifting-green-french-fries?platform=android" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="IAMGEM" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 3 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/bf9109" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="imagem " alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 4 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/c80db0?platform=ios" target="_blank">NADA</a>
-            <p>NADA</p>
-            <img src="IMAGEM" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 5 -->
-        <div class="card">
-            <a href="https://snack.expo.dev/@mariaclracacau/94bbec" target="_blank"> NADA</a>
-            <p>NADA</p>
-            <img src="IAMGEM" alt="Print do jogo" style="width:100%; border-radius:10px; margin-top:10px;">
-        </div>
-
-        <!-- Projeto 6 -->
-        <div class="card">
-            <p>Analisador de texto</p>
-        </div>
-
-        <!-- Projeto 7 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py7" target="_blank">Projeto Python 7</a>
-            <p>NADA</p>
-        </div>
-        <!-- Projeto 8 -->
-        <div class="card">
-            <a href="https://github.com/seuusuario/py8" target="_blank">Projeto Python 8</a>
-            <p>NADA</p>
-        </div>
-
-    </div>
+</html>

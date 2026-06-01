@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos do Futuro - DS & IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+        }
+        
+        header {
+            background: #0d0d0d;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        header h1 {
+            font-family: 'Fraunces', serif;
+            color: #d4af37;
+            font-size: 32px;
+            margin: 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .hero h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        
+        .courses {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+        
+        .course-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        
+        .course-card h3 {
+            font-family: 'Fraunces', serif;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .course-card p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        
+        .course-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .course-card ul li::before {
+            content: "✔ ";
+            color: #d4af37;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0d0d0d;
+            background-color: #d4af37;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #b9972c;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .section h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        
+        footer {
+            background: #0d0d0d;
+            color: #888;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Unidade Polo</h1>
+    </header>
+
+    <section class="hero">
+        <h2>Bem-vindo aos Cursos do Futuro</h2>
+    </section>
+
+    <section class="courses">
+        <div class="course-card">
+            <h3>Desenvolvimento de Programação</h3>
+            <p>Do zero ao full stack em 6 meses. Domine JavaScript, Python, Java e C# construindo soluções reais.</p>
+            <ul>
+                <li>+200h hands-on coding</li>
+                <li>10 portfólios prontos para empresas</li>
+                <li>Certificação + suporte 24/7</li>
+            </ul>
+            <a href="#" class="btn">Saiba mais</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Desenvolvimento de IA</h3>
+            <p>Aprenda Machine Learning, Deep Learning, LLMs e visão computacional com TensorFlow e PyTorch.</p>
+            <ul>
+                <li>8 projetos reais de IA</li>
+                <li>Certificação em ML Engineering</li>
+                <li>Mentoria com PhDs</li>
+            </ul>
+            <a href="#" class="btn">Saiba mais</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Sobre Maria</h2>
+        <p>Sou estudante do curso Técnico em DS & IA, apaixonada por criar soluções tecnológicas que fazem a diferença. Minha jornada une lógica, criatividade e propósito. Já desenvolvi projetos em JavaScript, Python e Inteligência Artificial.</p>
+        <a href="https://linkedin.com/in/seu-perfil" class="btn">LinkedIn</a>
+        <a href="portfolio.html" class="btn">Ver Portfólio</a>
+    </section>
+
+    <section class="section">
+        <h2>Venha estudar comigo</h2>
+        <p>Na mesma unidade em que estudo, você encontra professores especialistas, infraestrutura moderna e suporte completo para transformar aprendizado em carreira. Venha fazer parte do curso de DS & IA e construa o futuro com tecnologia.</p>
+        <a href="index.html" class="btn">Matricule-se Agora</a>
+    </section>
+
+    <section class="section">
+        <h2>Entre em contato</h2>
+        <p>Quer conversar comigo ou saber mais sobre o curso? Entre em contato e descubra como você também pode trilhar esse caminho.</p>
+        <a href="mailto:seuemail@exemplo.com" class="btn">Enviar Email</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Unidade de Ensino - Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>
