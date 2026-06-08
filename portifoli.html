@@ -4,425 +4,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Moisés | Front-End Developer</title>
-
-    <!-- SEO -->
-    <meta name="description" content="Portfólio de Maria Moisés, Front-End Developer e UI Designer. Criando experiências digitais modernas e intuitivas.">
-    <meta name="keywords" content="Frontend, UI, UX, HTML, CSS, JavaScript, Portfólio, Web Design">
-    <meta name="author" content="Maria Moisés">
-
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <title>Portfólio | Maria Moisés</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
          :root {
-            --primary: #E754A6;
-            --primary-light: #FFF2F8;
-            --text: #1E1E1E;
-            --gray: #6B7280;
-            --border: #ECECEC;
-            --white: #FFFFFF;
-            --bg: #ffffff;
+            --rosa: #E754A6;
+            --preto: #0D0D0D;
+            --branco: #FFFFFF;
+            --cinza: #6B7280;
         }
         
         body {
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            transition: background .3s, color .3s;
+            font-family: 'Inter', sans-serif;
+            background: var(--branco);
+            color: var(--preto);
+            transition: background 0.3s, color 0.3s;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
+        body.dark {
+            background: var(--preto);
+            color: var(--branco);
         }
         
         header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            background: var(--white);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--rosa);
+            position: sticky;
+            top: 0;
+            background: inherit;
         }
         
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        .menu {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .menu a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-        }
-        
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-        }
-        
-        .tag {
-            display: inline-block;
-            padding: 8px 15px;
-            background: var(--primary-light);
-            color: var(--primary);
-            border-radius: 30px;
-            font-size: .9rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--gray);
-            margin-bottom: 35px;
-        }
-        
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary,
-        .btn-secondary {
-            padding: 14px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: .3s;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: scale(1.05);
-        }
-        
-        .btn-secondary {
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-light);
-        }
-        
-        .stats {
-            padding: 80px 0;
-            background: #fafafa;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
+        h1,
+        h2 {
+            color: var(--rosa);
             text-align: center;
+            margin-top: 40px;
         }
         
-        .stat-card h3 {
-            font-size: 2rem;
-            color: var(--primary);
-        }
-        
-        .stat-card p {
-            color: var(--gray);
-        }
-        
-        .services {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .section-text {
-            color: var(--gray);
-            margin-bottom: 50px;
-        }
-        
-        .services-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 20px;
+            padding: 40px;
         }
         
-        .service-card {
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            transition: .3s;
+        .card {
+            background: var(--branco);
+            border: 1px solid var(--rosa);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            aspect-ratio: 1 / 1;
+            /* quadrado */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 5px 15px rgba(231, 84, 166, 0.2);
         }
         
-        .service-card:hover {
-            transform: translateY(-5px);
+        body.dark .card {
+            background: #1A1A1A;
         }
         
-        .service-card h3 {
-            margin-bottom: 10px;
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(231, 84, 166, 0.4);
         }
         
-        .service-card p {
-            color: var(--gray);
+        .card img {
+            width: 100%;
+            max-width: 100px;
+            margin: auto;
+            border-radius: 8px;
         }
         
-        .projects {
-            padding: 100px 0;
-            background: #fafafa;
+        .card h3 {
+            margin: 10px 0;
+            color: var(--rosa);
         }
         
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+        .card p {
+            font-size: 0.9rem;
+            color: var(--cinza);
         }
         
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #E754A6, #FFC2E2);
-        }
-        
-        .project-info {
-            padding: 25px;
-        }
-        
-        .project-info h3 {
-            margin-bottom: 10px;
-        }
-        
-        .project-info p {
-            color: var(--gray);
-        }
-        
-        .contact {
-            padding: 80px 0;
-        }
-        
-        .contact ul {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .contact li {
-            margin-bottom: 10px;
-        }
-        
-        .contact a {
-            color: var(--primary);
+        a {
+            color: var(--rosa);
             text-decoration: none;
+            font-weight: 600;
         }
         
         footer {
-            padding: 40px 0;
             text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--gray);
+            padding: 20px;
+            border-top: 2px solid var(--rosa);
+            margin-top: 40px;
+            color: var(--cinza);
         }
-        /* Dark Mode */
         
-        body.dark {
-            --bg: #1E1E1E;
-            --text: #f5f5f5;
-            --gray: #d1d5db;
-            --border: #333;
-            --white: #2c2c2c;
-        }
-        /* Responsividade */
-        
-        @media(max-width:768px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            .menu {
-                display: none;
-                flex-direction: column;
-                gap: 15px;
-                background: var(--white);
-                padding: 20px;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                border: 1px solid var(--border);
-                border-radius: 12px;
-            }
-            .menu.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
+        button {
+            background: var(--rosa);
+            color: var(--branco);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
         }
     </style>
 </head>
 
 <body>
-
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Maria<span>.</span></div>
-                <div class="menu">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#projetos">Projetos</a>
-                    <a href="#contato">Contato</a>
-                </div>
-                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            </nav>
-        </div>
+        <h1>Portfólio Profissional</h1>
+        <button id="theme-toggle">🌙/☀️</button>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="tag">Frontend Developer & UI Designer</div>
-                <h1>Criando experiências digitais modernas e intuitivas.</h1>
-                <p>Sou Maria Moisés, desenvolvedora apaixonada por design e tecnologia. Transformo ideias em interfaces elegantes, responsivas e funcionais.</p>
-                <div class="buttons">
-                    <a href="https://mariamoisesmoraes-jpg.github.io/portifolio-da-barbie/portifoli.html" class="btn-primary">Ver Portfólio</a>
-                    <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" class="btn-secondary">LinkedIn</a>
-                    <button onclick="toggleDarkMode()" class="btn-secondary">🌙 Dark Mode</button>
-                </div>
+    <main>
+        <!-- GAMMA -->
+        <section id="GAMMA">
+            <h2>Projetos GAMMA</h2>
+            <div class="grid">
+                <!-- 20 cards -->
+                <div class="card"><img src="propiedade.png">
+                    <h3>GAMMA PROPRIEDAADE INTERLECTUAL</h3>
+                    <p>Descrição breve.</p><a href="https://gamma.app/docs/Propriedade-Intelectual-e-Educacao-Beneficios-e-Limitacoes-no-Amb-xlvx2pcoce2wlx0">Ver Página</a></div>
+                <div class="card"><img src="startups.png">
+                    <h3>Startups Mais Promissoras de 2026</h3>
+                    <p>Descrição breve.</p><a href="https://gamma.app/docs/Startups-Mais-Promissoras-de-2026-2n6lqw5khw2xmou">Ver Página</a></div>
+                <div class="card"><img src="agenda .png">
+                    <h3>Agenda Escolar 360</h3>
+                    <p>Descrição breve.</p><a href="https://gamma.app/docs/Agenda-Escolar-360-zf1vodwfalln7e5">Ver Página</a></div>
+                <div class="card"><img src="COLOCA IMAGEM AQUI">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <!-- ...repita até Python 20 -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>10+</h3>
-                    <p>Projetos Desenvolvidos</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Front-End</h3>
-                    <p>HTML, CSS e JavaScript</p>
-                </div>
-                <div class="stat-card">
-                    <h3>UI/UX</h3>
-                    <p>Interfaces modernas e responsivas</p>
-                </div>
+        <!-- Seção JavaScript -->
+        <section id="javascript">
+            <h2>Projetos em JavaScript</h2>
+            <div class="grid">
+                <div class="card"><img src="img/js1.png">
+                    <h3>JS 1</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/js2.png">
+                    <h3>JS 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <!-- ...até JS 20 -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services" id="sobre">
-        <div class="container">
-            <h2 class="section-title">O que eu faço</h2>
-            <p class="section-text">Soluções digitais focadas em design, usabilidade e performance.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sites modernos e responsivos.</p>
-                </div>
-                <div class="service-card">
-                    <h3>UI/UX Design</h3>
-                    <p>Experiências intuitivas e visualmente agradáveis.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Projetos Acadêmicos</h3>
-                    <p>Aplicações voltadas para estudo e inovação.</p>
-                </div>
+        <!-- Seção HTML+CSS -->
+        <section id="htmlcss">
+            <h2>Projetos em HTML+CSS</h2>
+            <div class="grid">
+                <div class="card"><img src="img/htmlcss1.png">
+                    <h3>HTML+CSS 1</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/htmlcss2.png">
+                    <h3>HTML+CSS 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <!-- ...até HTML+CSS 20 -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="projects" id="projetos">
-        <div class="container">
-            <h2 class="section-title">Projetos em Destaque</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h<section class="contact" id="contato">
-                            <div class="container">
-                                <h2 class="section-title">Contato</h2>
-                                <p class="section-text">Entre em contato comigo pelos canais abaixo:</p>
-                                <ul>
-                                    <li>Email: <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a></li>
-                                    <li>WhatsApp: <a href="https://wa.me/5541999999999" target="_blank">(41) 99999-9999</a></li>
-                                    <li>LinkedIn: <a href="https://www.linkedin.com/in/seu-usuario" target="_blank">linkedin.com/in/seu-usuario</a></li>
-                                </ul>
-                            </div>
-    </section>
+        <!-- SeçãO IA -->
+        <section id="IA">
+            <h2>IA</h2>
+            <div class="grid">
+                <div class="card"><img src="COPA DO MUNDO.png">
+                    <h3>FIGURINHAS DA COPA</h3>
+                    <p>Descrição breve.</p><a href="https://ai.studio/apps/3fb340b9-e5d9-41aa-a72d-40cf958e1b21">Ver Página</a></div>
+                <div class="card"><img src="PET.png">
+                    <h3>PET</h3>
+                    <p>Descrição breve.</p><a href="https://ai.studio/apps/ddb89f4c-ffb7-48c9-84d7-14cf6e27bb6b">Ver Página</a></div>
+                <div class="card"><img src="FINANÇAS.png">
+                    <h3>FINANÇAS</h3>
+                    <p>Descrição breve.</p><a href="https://ai.studio/apps/0f9551d7-5d89-4471-8acf-b97b5952c6b1">Ver Página</a></div>
+                <div class="card"><img src="img/htmlcss2.png">
+                    <h3>HTML+CSS 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <div class="card"><img src="img/python2.png">
+                    <h3>Python 2</h3>
+                    <p>Descrição breve.</p><a href="#">Ver Página</a></div>
+                <!-- ...até HTML+CSS 20 -->
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">
-            © 2026 Maria Moisés • Front-End Developer
-        </div>
+        © 2026 Maria Moisés • Front-End Developer
     </footer>
 
-    <!-- Funções JS -->
     <script>
-        // Alterna o dark mode
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark");
-        }
-
-        // Alterna o menu mobile
-        function toggleMenu() {
-            document.querySelector(".menu").classList.toggle("active");
-        }
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
     </script>
 </body>
 
